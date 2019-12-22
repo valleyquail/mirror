@@ -454,17 +454,17 @@
 #endif
 
 #ifdef DEFAULTS_RAMPS_BOARD
-  #define MICROSTEPS_AXIS1 4     // Microstepping = 1/4 pas
+  #define MICROSTEPS_AXIS1 1     // Microstepping = 1 pas
   #define STEP_REVS_AXIS1 200    // Moteurs à 200 pas par tour
-  #define UNIT_PER_REV_AXIS1 2.0 // 2mm
+  #define UNIT_PER_REV_AXIS1 (0.1*MM_PER_INCH) // 1/10 inch per rev
   #define DEFAULT_AXIS1_STEPS_PER_UNIT (MICROSTEPS_AXIS1*STEP_REVS_AXIS1/UNIT_PER_REV_AXIS1) // 400
-  #define MICROSTEPS_AXIS2 4     // Microstepping = 1/4 pas
+  #define MICROSTEPS_AXIS2 1     // Microstepping = 1 pas
   #define STEP_REVS_AXIS2 200    // Moteurs à 200 pas par tour
-  #define UNIT_PER_REV_AXIS2 2.0 // 2mm
+  #define UNIT_PER_REV_AXIS2 (0.1*MM_PER_INCH) // 1/10 inch per rev
   #define DEFAULT_AXIS2_STEPS_PER_UNIT (MICROSTEPS_AXIS2*STEP_REVS_AXIS2/UNIT_PER_REV_AXIS2)
-  #define MICROSTEPS_AXIS3 4     // Microstepping = 1/4 pas
+  #define MICROSTEPS_AXIS3 1     // Microstepping = 1 pas
   #define STEP_REVS_AXIS3 200    // Moteurs à 200 pas par tour
-  #define UNIT_PER_REV_AXIS3 2.0 // 2mm
+  #define UNIT_PER_REV_AXIS3 (0.1*MM_PER_INCH) // 1/10 inch per rev
   #define DEFAULT_AXIS3_STEPS_PER_UNIT (MICROSTEPS_AXIS3*STEP_REVS_AXIS3/UNIT_PER_REV_AXIS3)
   #define STEP_MAX_FREQUENCY 5000
   #define SECONDS_PER_MINUTE 60
@@ -477,14 +477,14 @@
   #define DEFAULT_AXIS1_ACCELERATION (50.0*60*60) // 300*60*60 mm/min^2 = 300 mm/sec^2
   #define DEFAULT_AXIS2_ACCELERATION (50.0*60*60) // 300*60*60 mm/min^2 = 300 mm/sec^2
   #define DEFAULT_AXIS3_ACCELERATION (50.0*60*60) // 100*60*60 mm/min^2 = 100 mm/sec^2
-  #define DEFAULT_AXIS1_MAX_TRAVEL 400.0 // mm
-  #define DEFAULT_AXIS2_MAX_TRAVEL 200.0 // mm
-  #define DEFAULT_AXIS3_MAX_TRAVEL 200.0 // mm
-  #if N_AXIS > 3
-    #define DEFAULT_AXIS4_STEPS_PER_UNIT 8.888889 // Direct drive : (200 pas par tours * 1/16 microsteps)/360°
-    #define DEFAULT_AXIS4_MAX_RATE 1440 // °/mn
+  #define DEFAULT_AXIS1_MAX_TRAVEL 800.0 // mm
+  #define DEFAULT_AXIS2_MAX_TRAVEL 940.0 // mm
+  #define DEFAULT_AXIS3_MAX_TRAVEL 180.0 // mm
+  #if N_AXIS > 3 //Linear Clone for Y Axis
+    #define DEFAULT_AXIS4_STEPS_PER_UNIT 80 // Direct drive : (200 pas par tours * 1/16 microsteps)/360°
+    #define DEFAULT_AXIS4_MAX_RATE 4000 // °/mn
     #define DEFAULT_AXIS4_ACCELERATION (50.0*60*60) // 100*60*60 mm/min^2 = 100 mm/sec^2
-    #define DEFAULT_AXIS4_MAX_TRAVEL 360.0 // °
+    #define DEFAULT_AXIS4_MAX_TRAVEL 940.0 // °
   #endif
   #if N_AXIS > 4
     #define DEFAULT_AXIS5_STEPS_PER_UNIT 8.888889 // Direct drive : (200 pas par tours * 1/16 microsteps)/360°
@@ -503,16 +503,16 @@
   #define DEFAULT_STEP_PULSE_MICROSECONDS 10
   #define DEFAULT_STEPPING_INVERT_MASK 0
   #define DEFAULT_DIRECTION_INVERT_MASK 0
-  #define DEFAULT_STEPPER_IDLE_LOCK_TIME 254 // msec (0-254, 255 keeps steppers enabled)
+  #define DEFAULT_STEPPER_IDLE_LOCK_TIME 255 // msec (0-254, 255 keeps steppers enabled)
   #define DEFAULT_STATUS_REPORT_MASK 1 // MPos enabled
   #define DEFAULT_JUNCTION_DEVIATION 0.02 // mm
   #define DEFAULT_ARC_TOLERANCE 0.002 // mm
   #define DEFAULT_REPORT_INCHES 0 // false
   #define DEFAULT_INVERT_ST_ENABLE 0 // false
   #define DEFAULT_INVERT_LIMIT_PINS 0 // false
-  #define DEFAULT_SOFT_LIMIT_ENABLE 1 // true
+  #define DEFAULT_SOFT_LIMIT_ENABLE 0 // true
   #define DEFAULT_HARD_LIMIT_ENABLE 0  // false
-  #define DEFAULT_INVERT_PROBE_PIN 0 // false
+  #define DEFAULT_INVERT_PROBE_PIN 1 // false
   #define DEFAULT_LASER_MODE 0 // false
   #define DEFAULT_HOMING_ENABLE 1  // true
   #define DEFAULT_HOMING_DIR_MASK 0 // move positive dir
