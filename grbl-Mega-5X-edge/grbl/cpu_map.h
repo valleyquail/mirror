@@ -248,7 +248,7 @@
   #define MIN_LIMIT_PORT_1 J
   #define MIN_LIMIT_PORT_2 D
   #if N_AXIS > 3
-    #define MIN_LIMIT_PORT_3 L
+    #define MIN_LIMIT_PORT_3 J
   #endif
   #if N_AXIS > 4
     #define MIN_LIMIT_PORT_4 L
@@ -260,7 +260,7 @@
   #define MIN_LIMIT_BIT_1 1 // Y Limit Min - Pin D14
   #define MIN_LIMIT_BIT_2 3 // Z Limit Min - Pin D18
   #if N_AXIS > 3
-    #define MIN_LIMIT_BIT_3 7 // Axis number 4 : RAMPS AUX2 pin D42
+    #define MIN_LIMIT_BIT_3 0 // Axis number 4 : RAMPS AUX2 pin D42
   #endif
   #if N_AXIS > 4
     #define MIN_LIMIT_BIT_4 5 // Axis number 5 : RAMPS AUX2 pin D44
@@ -275,7 +275,7 @@
   #define MIN_LIMIT_PIN(i) _PIN(MIN_LIMIT_PORT_##i)
 
   #define MAX_LIMIT_PORT_0 E
-  #define MAX_LIMIT_PORT_1 J
+  #define MAX_LIMIT_PORT_1 L
   #define MAX_LIMIT_PORT_2 D
   #if N_AXIS > 3
     #define MAX_LIMIT_PORT_3 G
@@ -287,7 +287,7 @@
     #define MAX_LIMIT_PORT_5 F // (Ramps Aux-3 D58)
   #endif
   #define MAX_LIMIT_BIT_0 4 // X Limit Max - Pin D2
-  #define MAX_LIMIT_BIT_1 0 // Y Limit Max - Pin D15
+  #define MAX_LIMIT_BIT_1 7 // Y Limit Max - Pin D15
   #define MAX_LIMIT_BIT_2 2 // Z Limit Max - Pin D19
   #if N_AXIS > 3
     #define MAX_LIMIT_BIT_3 1 // Axis number 4 : RAMPS AUX2 pin D40
