@@ -310,7 +310,7 @@
   //  #define LIMIT_MASK ((1<<X_LIMIT_BIT)|(1<<Y_LIMIT_BIT)|(1<<Z_LIMIT_BIT)) // All limit bits
   // Hardware limits interrupts are not implemented in the RAMPS version of grbl-Mega
   // since all the limit switch ports are not compatible with interrupts.
-  //#define DISABLE_HW_LIMITS_INTERRUPT
+  #define DISABLE_HW_LIMITS_INTERRUPT
 
   // Enable Hardware limit support for RAMPS without using interrupt...
   // Warning! bouncing switches can cause a state check like this to misread the pin.
